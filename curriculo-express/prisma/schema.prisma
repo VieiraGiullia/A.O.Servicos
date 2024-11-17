@@ -21,5 +21,6 @@ model curriculo {
   email String
   github String
   habilidades String
+  objetivo String
 }
 
