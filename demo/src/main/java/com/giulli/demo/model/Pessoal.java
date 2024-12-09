@@ -1,6 +1,8 @@
-package main.java.com.giulli.demo.model;
+package com.giulli.demo.model;
 
 import javax.annotation.processing.Generated;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pessoal")
@@ -9,18 +11,15 @@ public class Pessoal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nome é obrigatório")
     @Column(nullable = false)
     private String nome;
 
-    @Email(message = "Email inválido")
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
     private String endereco;
 
-    @NotBlank(message = "Telefone é obrigatório")
     private String telefone;
 
     @Column(length = 1000)

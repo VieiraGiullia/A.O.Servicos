@@ -1,10 +1,10 @@
-package main.java.com.giulli.demo.model;
+package com.giulli.demo.model;
 
-import java.lang.annotation.Inherited;
+import jakarta.persistence.*;
 
 @Entity
 public class Educacao {
-    @id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String instituicao;

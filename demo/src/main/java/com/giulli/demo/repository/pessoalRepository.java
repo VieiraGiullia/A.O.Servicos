@@ -1,6 +1,8 @@
-package main.java.com.giulli.demo.repository;
+package com.giulli.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface PessoalRepository extends JpaRepository<Pessoal, Long> {
+
+import com.giulli.demo.model.Pessoal;
+public interface pessoalRepository extends JpaRepository<Pessoal, Long> {
 
 }

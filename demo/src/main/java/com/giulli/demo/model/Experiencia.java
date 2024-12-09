@@ -1,6 +1,8 @@
-package main.java.com.giulli.demo.model;
+package com.giulli.demo.model;
 
 import javax.annotation.processing.Generated;
+
+import jakarta.persistence.*;
 
 @Entity
 public class Experiencia {
