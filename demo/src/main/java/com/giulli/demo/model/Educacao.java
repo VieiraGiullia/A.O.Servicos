@@ -10,6 +10,10 @@ public class Educacao {
     private String instituicao;
     private String curso;
     private String anoDeConclusao;
+    
+    @ManyToOne
+    @JoinColumn(name = "pessoa_id")
+    private Pessoal pessoa;
 
     public Long getId() {
         return id;

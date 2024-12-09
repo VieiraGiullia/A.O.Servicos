@@ -1,6 +1,7 @@
 package com.giulli.demo.model;
 
-import javax.annotation.processing.Generated;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -24,6 +25,18 @@ public class Pessoal {
 
     @Column(length = 1000)
     private String resumo;
+
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Experiencia> experiencias = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Educacao> educacoes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Habilidades> habilidades = new ArrayList<>();
+
+    @OneToMany(mappedBy = "experiencia", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Projetos> projetos = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -57,5 +70,9 @@ public class Pessoal {
     }
     public void setResumo(String resumo) {
         this.resumo = resumo;
+    }
+    public List<Experiencia> getExperiencias() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getExperiencias'");
     }
 }
